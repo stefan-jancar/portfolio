@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="container">
+        <main id="main">
+            <div class="section-title">
+                <h1>Hi, {{ current_user.username }}!</h1>
+                {% if form %}
+                <form  class="contact .php-email-form" action="" method="post">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.post.label }}<br>
+                        {{ form.post(cols=32, rows=4) }}<br>
+                        {% for error in form.post.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>{{ form.submit() }}</p>
+                </form>
+                {% endif %}
+                {% for post in posts %}
+                {% include '_post.html' %}
+                {% endfor %}
+                {% if prev_url %}
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li class="previous{% if not prev_url %} disabled{% endif %}">
+                            <a href="{{ prev_url or '#' }}">
+                                <span aria-hidden="true">&larr;</span> Newer posts
+                            </a>
+                        </li>
+                        <li class="next{% if not next_url %} disabled{% endif %}">
+                            <a href="{{ next_url or '#' }}">
+                                Older posts <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+        </main>
+    </div>
+</body>
+{% endblock %}
