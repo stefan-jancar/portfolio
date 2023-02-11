@@ -238,6 +238,13 @@ h6 {
     background-size: cover;
 }
 
+#hero3 {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    filter: fliph;
+} 
+
 #hero:before {
   content: "";
   background: rgba(5, 13, 24, 0.3);
