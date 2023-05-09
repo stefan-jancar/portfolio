@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
 from time import time
 import jwt
 from datetime import datetime

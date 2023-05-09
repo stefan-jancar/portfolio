@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
 from flask import render_template
 from flask_mail import Message
 from app import app, mail

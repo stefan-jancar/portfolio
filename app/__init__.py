@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
